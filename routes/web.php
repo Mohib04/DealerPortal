@@ -1,6 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+    use App\Models\Dealer;
+    use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\dealerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $data = Dealer::all();
+    return view('home',[
+        'values' => $data
+    ]);
 });
+//Form
+Route::resource('dealerForm', dealerController::class);
