@@ -18,8 +18,8 @@
         <div class="row">
             <div class="col-md-6">
                 <nav class="navbar navbar-light ">
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <form class="d-flex" action=" " method="get">
+                            <input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
                 </nav>

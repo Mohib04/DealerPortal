@@ -15,12 +15,7 @@ use App\Http\Controllers\dealerController;
 |
 */
 
-Route::get('/', function () {
-    $data = Dealer::all();
-    return view('home',[
-        'values' => $data
-    ]);
-});
+Route::get('/', 'App\Http\Controllers\indexController@index');
 
 /*
  * Form Resource Route
