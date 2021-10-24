@@ -7,7 +7,6 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
     <title>AnH Enterprise Limited</title>
 </head>
 <body>
@@ -26,14 +25,13 @@
                 </nav>
             </div>
             <div class="col-md-6 text-end">
+                <a href="{{ route('download') }}"><button type="button" class="btn btn-outline-success btn-lg">Download</button></a>
                 <a href="{{ url('dealerForm') }}"><button type="button" class="btn btn-outline-success btn-lg">Add Dealer</button></a>
             </div>
         </div>
     </div>
 
-
-
-            <!--table -->
+    <!--table -->
     <table style="vertical-align: middle" class="table table-success table-bordered border-light table-hover">
         <thead class="table-dark">
         <tr>
@@ -56,13 +54,7 @@
         @endforeach
         </tbody>
     </table>
-
 </div>
-
-
-
-
-
 
 <!-- Optional JavaScript; choose one of the two! -->
 

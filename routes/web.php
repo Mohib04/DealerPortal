@@ -21,5 +21,12 @@ Route::get('/', function () {
         'values' => $data
     ]);
 });
-//Form
+
+/*
+ * Form Resource Route
+*/
 Route::resource('dealerForm', dealerController::class);
+/*
+ * Download Dealer
+ */
+Route::get('download', 'App\Http\Controllers\excelDownload@dealerDownload')->name('download');
