@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-<<<<<<< HEAD
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
@@ -19,13 +18,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-=======
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
->>>>>>> 55a655470380f6300821b93a2f2cf8957faa4f6a
     <title>AnH Enterprise Limited</title>
 </head>
 
-<<<<<<< HEAD
 <body style="font-family: 'Open Sans', sans-serif;">
 
     <div class="container">
@@ -87,29 +82,10 @@
 
                 </div>
 
-=======
-<div class="container" >
-    <!-- Top Contant here -->
-    <div class="bg-light">
-        <h1 class="text-center text-uppercase">Dealers Portal</h1>
-        <div class="row">
-            <div class="col-md-6">
-                <nav class="navbar navbar-light ">
-                        <form class="d-flex" action=" " method="get">
-                            <input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                </nav>
-            </div>
-            <div class="col-md-6 text-end">
-                <a href="{{ route('download') }}"><button type="button" class="btn btn-outline-success btn-lg">Download</button></a>
-                <a href="{{ url('dealerForm') }}"><button type="button" class="btn btn-outline-success btn-lg">Add Dealer</button></a>
->>>>>>> 55a655470380f6300821b93a2f2cf8957faa4f6a
             </div>
         </div>
     </div>
 
-<<<<<<< HEAD
     <!-- Optional JavaScript; choose one of the two! -->
 
 
@@ -158,34 +134,6 @@
     <script>
         @if (Session::has('message'))
             var type = "{{ Session::get('alert-type', 'info') }}";
-=======
-    <!--table -->
-    <table style="vertical-align: middle" class="table table-success table-bordered border-light table-hover">
-        <thead class="table-dark">
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Distribution Company</th>
-            <th scope="col">Distributor's Name</th>
-            <th scope="col">Area</th>
-            <th scope="col">Image</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach($values as $value)
-            <tr>
-                <td>{{ $value->id }}</td>
-                <td>{{ $value->company }}</td>
-                <td>{{ $value->name }}</td>
-                <td>{{ $value->area }}</td>
-                <td style="width: 9%"><img class="rounded-circle " style="width: 100px; height: 100px; text-align: center;" src="{{ asset('uploads/dealers/'.$value->image) }}"></td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table>
-</div>
-
-<!-- Optional JavaScript; choose one of the two! -->
->>>>>>> 55a655470380f6300821b93a2f2cf8957faa4f6a
 
             switch (type) {
                 case 'info':
