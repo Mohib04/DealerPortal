@@ -18,6 +18,7 @@ class CreateDealersTable extends Migration
             $table->string('company');
             $table->string('name');
             $table->string('area');
+            $table->string('phone');
             $table->string('image');
             $table->timestamps();
         });

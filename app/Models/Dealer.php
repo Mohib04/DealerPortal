@@ -12,6 +12,11 @@ class Dealer extends Model
             'company',
             'name',
             'area',
+            'phone',
             'image'
         ];
+
+    public static function find(int $id)
+    {
+    }
 }

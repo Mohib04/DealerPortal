@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Dealer;
+use PhpOffice\PhpSpreadsheet\Style\Fill;
+
 class dealerController extends Controller
 {
     /**
@@ -41,12 +43,14 @@ class dealerController extends Controller
             'company'=>'required',
             'name'=>'required',
             'area'=>'required',
+            'phone'=>'required',
             'image'=>'required',
         ]);
         $dealer = new Dealer;
         $dealer->company = $request['company'];
         $dealer->name = $request['name'];
         $dealer->area = $request['area'];
+        $dealer->phone = $request['phone'];
 
         //Image save
         if($request->hasFile('image'))
@@ -64,7 +68,12 @@ class dealerController extends Controller
         }
         $dealer->save();
 
-        return redirect('/dealerForm');
+        $notification = array(
+            'message' => 'Dealer insertaded Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect('/dealerForm')->with($notification);
     }
 
     /**
@@ -87,6 +96,8 @@ class dealerController extends Controller
     public function edit($id)
     {
         //
+        $editDealer = Dealer::findOrFail($id);
+        return view("editDealer", ['data'=>$editDealer]);
     }
 
     /**
@@ -96,9 +107,35 @@ class dealerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function uDealer(Request $request, $id)
     {
         //
+        $updateDealer = Dealer::findOrfail($id);
+
+        $updateDealer->company = $request->input('company');
+        $updateDealer->name = $request->input('name');
+        $updateDealer->area = $request->input('area');
+
+        if($request->hasFile('image'))
+        {
+            $destination = 'uploads/dealers/'.$updateDealer->image;
+//            if (Fill::exits($destination)){
+//                Fill::delete($destination);
+//            }
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time(). '.' .$extension;
+            $file->move('uploads/dealers/', $filename);
+            $updateDealer->image = $filename;
+        }
+
+        $updateDealer->update();
+
+        $notification = array(
+            'message' => 'Dealer Updated Successfully',
+            'alert-type' => 'info'
+        );
+        return redirect('/')->with($notification);
     }
 
     /**
@@ -107,8 +144,18 @@ class dealerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function dDelete($id)
     {
-        //
+        $image = Dealer::findOrfail($id);
+        $old_image = 'uploads/dealers/'. $image->image;
+        unlink($old_image);
+
+        Dealer::findOrfail($id)->delete();
+        return redirect()->back()->with('status', 'Dealer Deleted successfully');
     }
+
+
+
+
+
 }
