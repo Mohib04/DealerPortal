@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Exports\dealersExport;
+<<<<<<< HEAD
 use App\Imports\DealerImport;
+=======
+>>>>>>> 55a655470380f6300821b93a2f2cf8957faa4f6a
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use App\Models\Dealer;
@@ -16,6 +19,7 @@ class excelDownload extends Controller
     {
         return Excel::download(new dealersExport, 'users.xlsx');
     }
+<<<<<<< HEAD
 
     //Emport
     public function dealerImport(){
@@ -28,4 +32,6 @@ class excelDownload extends Controller
         dd($data); ;
 
     }
+=======
+>>>>>>> 55a655470380f6300821b93a2f2cf8957faa4f6a
 }
