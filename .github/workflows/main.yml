@@ -16,4 +16,4 @@ jobs:
       with:
         server: ftp.onlinecompany.live
         username: ftp.onlinecompany.live
-        password: ${{ secrets.LOCAL }}
+        password: ?mQ?hpb,yA4$
