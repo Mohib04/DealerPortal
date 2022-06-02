@@ -19,7 +19,6 @@ class excelDownload extends Controller
     {
         return Excel::download(new dealersExport, 'users.xlsx');
     }
-<<<<<<< HEAD
 
     //Emport
     public function dealerImport(){
@@ -32,6 +31,4 @@ class excelDownload extends Controller
         dd($data); ;
 
     }
-=======
->>>>>>> 55a655470380f6300821b93a2f2cf8957faa4f6a
 }
