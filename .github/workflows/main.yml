@@ -1,16 +1,19 @@
 on: push
-name: 🚀 Deploy website on push
+push:
+  branches:
+      -master
+name: Production Deploy
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
-    runs-on: ubuntu-latest
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
+    runs-on: ubuntu-laest
     steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v2
-
-      - name: 📂 Sync files
+    - uses: actions/checkout@v2.1.0
+      with:
+        fetch-depth: 2
+        - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          server: ftp.onlinecompany.live
-          username: local@onlinecompany.live
+          server: ftp://64.20.51.18
+          username: local
           password: ${{ secrets.ftp_password }}
