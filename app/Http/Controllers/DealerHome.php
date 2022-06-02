@@ -77,8 +77,17 @@ class DealerHome extends Controller
      * @return \Illuminate\Http\Response
      */
 
+<<<<<<< Updated upstream
 
 
+=======
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+>>>>>>> Stashed changes
 
 
     public function AllDealer(){
