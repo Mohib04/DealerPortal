@@ -16,4 +16,4 @@ jobs:
         with:
           server: ftp://64.20.51.18
           username: local
-          password: ${{ secrets.ftp_password }}
+          password: ${{ secrets.LOCAL }}
