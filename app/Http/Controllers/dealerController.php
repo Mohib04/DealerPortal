@@ -73,7 +73,7 @@ class dealerController extends Controller
             'alert-type' => 'success'
         );
 
-        return redirect('/dealerForm')->with($notification);
+        return redirect('dashboard')->with($notification);
     }
 
     /**
@@ -135,7 +135,7 @@ class dealerController extends Controller
             'message' => 'Dealer Updated Successfully',
             'alert-type' => 'info'
         );
-        return redirect('/')->with($notification);
+        return redirect('dashboard')->with($notification);
     }
 
     /**
@@ -151,7 +151,7 @@ class dealerController extends Controller
         unlink($old_image);
 
         Dealer::findOrfail($id)->delete();
-        return redirect()->back()->with('status', 'Dealer Deleted successfully');
+        return redirect('dashboard')->with('status', 'Dealer Deleted successfully');
     }
 
 

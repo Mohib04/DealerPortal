@@ -13,10 +13,7 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.3",
-<<<<<<< HEAD
         "livewire/livewire": "^2.5",
-=======
->>>>>>> 55a655470380f6300821b93a2f2cf8957faa4f6a
         "maatwebsite/excel": "^3.1"
     },
     "require-dev": {
