@@ -14,6 +14,6 @@ jobs:
         - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          server: ftp://64.20.51.18
-          username: local
+          server: local@onlinecompany.live
+          username: ftp.onlinecompany.live
           password: ${{ secrets.LOCAL }}
